@@ -1,5 +1,6 @@
 package com.github.binarywang.demo.wx.mp.controller;
 
+import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
@@ -23,9 +24,10 @@ import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 /**
  * @author Binary Wang(https://github.com/binarywang)
  */
+@Api(tags = "微信消息路由功能")
 @Slf4j
-@AllArgsConstructor
 @RestController
+@AllArgsConstructor
 @RequestMapping("/wx/portal/{appid}")
 public class WxPortalController {
     private final WxMpService wxService;
@@ -37,21 +39,17 @@ public class WxPortalController {
                           @RequestParam(name = "timestamp", required = false) String timestamp,
                           @RequestParam(name = "nonce", required = false) String nonce,
                           @RequestParam(name = "echostr", required = false) String echostr) {
-
         log.info("\n接收到来自微信服务器的认证消息：[{}, {}, {}, {}]", signature,
             timestamp, nonce, echostr);
         if (StringUtils.isAnyBlank(signature, timestamp, nonce, echostr)) {
             throw new IllegalArgumentException("请求参数非法，请核实!");
         }
-
         if (!this.wxService.switchover(appid)) {
             throw new IllegalArgumentException(String.format("未找到对应appid=[%s]的配置，请核实！", appid));
         }
-
         if (wxService.checkSignature(timestamp, nonce, signature)) {
             return echostr;
         }
-
         return "非法请求";
     }
 
@@ -67,15 +65,12 @@ public class WxPortalController {
         log.info("\n接收微信请求：[openid=[{}], [signature=[{}], encType=[{}], msgSignature=[{}],"
                 + " timestamp=[{}], nonce=[{}], requestBody=[\n{}\n] ",
             openid, signature, encType, msgSignature, timestamp, nonce, requestBody);
-
         if (!this.wxService.switchover(appid)) {
             throw new IllegalArgumentException(String.format("未找到对应appid=[%s]的配置，请核实！", appid));
         }
-
         if (!wxService.checkSignature(timestamp, nonce, signature)) {
             throw new IllegalArgumentException("非法请求，可能属于伪造的请求！");
         }
-
         String out = null;
         if (encType == null) {
             // 明文传输的消息
@@ -84,7 +79,6 @@ public class WxPortalController {
             if (outMessage == null) {
                 return "";
             }
-
             out = outMessage.toXml();
         } else if ("aes".equalsIgnoreCase(encType)) {
             // aes加密的消息
@@ -95,10 +89,8 @@ public class WxPortalController {
             if (outMessage == null) {
                 return "";
             }
-
             out = outMessage.toEncryptedXml(wxService.getWxMpConfigStorage());
         }
-
         log.debug("\n组装回复信息：{}", out);
         return out;
     }
@@ -109,7 +101,6 @@ public class WxPortalController {
         } catch (Exception e) {
             log.error("路由消息时出现异常！", e);
         }
-
         return null;
     }
 

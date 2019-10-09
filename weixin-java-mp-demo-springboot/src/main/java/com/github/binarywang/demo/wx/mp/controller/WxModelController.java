@@ -17,9 +17,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@AllArgsConstructor
-@RestController
 @Api(tags = "微信模板")
+@RestController
+@AllArgsConstructor
 @RequestMapping("/wx/model/{appid}")
 public class WxModelController {
     private final WxMpService wxService;
