@@ -50,3 +50,9 @@ sonar-project.properties
 
 # STS
 .factorypath
+/weixin-java-mp-demo-springboot/.travis.yml
+/weixin-java-mp-demo-springboot/.editorconfig
+/weixin-java-mp-demo-springboot/.gitignore
+/weixin-java-pay-demo/.gitignore
+/weixin-java-pay-demo/.travis.yml
+/weixin-java-pay-demo/.editorconfig
