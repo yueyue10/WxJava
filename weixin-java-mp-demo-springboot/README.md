@@ -6,11 +6,11 @@
 ### 新实现的功能：
 * swagger接口文档
 
-<details>
-<summary>swagger-ui.png</summary>
-
-![swagger-ui.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/swagger-ui.png?raw=true)
-</details>
+    <details>
+    <summary>swagger-ui.png</summary>
+    
+    ![swagger-ui.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/swagger-ui.png?raw=true)
+    </details>
 
 * 公众号获取用户身份信息
 * 公众号网页jssdk各权限测试
@@ -19,12 +19,12 @@
 * 微信公众号官网服务器相关配置[参考文档][0]
     * 此处需要对外的服务器地址，所以使用nat123进行
     
-    <details>
-    <summary>nat123.png&nat123_setting.png</summary>
-
-    ![nat123.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/nat123.png?raw=true)
-    ![nat123_setting.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/nat123_setting.png?raw=true)
-    </details>
+        <details>
+        <summary>nat123.png&nat123_setting.png</summary>
+    
+        ![nat123.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/nat123.png?raw=true)
+        ![nat123_setting.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/nat123_setting.png?raw=true)
+        </details>
     
 * 微信公众号测试账号[地址][1]
 
@@ -45,26 +45,26 @@
     
 * 获取公众号用户信息：
     - 通过接口生成授权网页(带有回调接口地址)
-    <details>
-    <summary>获取用户信息_1构造网页授权url.png</summary>
-            
-    ![获取用户信息_1构造网页授权url.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/获取用户信息_1构造网页授权url.png?raw=true)
-    </details>
+        <details>
+        <summary>获取用户信息_1构造网页授权url.png</summary>
+                
+        ![获取用户信息_1构造网页授权url.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/获取用户信息_1构造网页授权url.png?raw=true)
+        </details>
     
     - 微信用户访问授权网页并授权
     
-    <details>
-    <summary>获取用户信息_1构造网页授权url.png</summary>
-            
-    ![获取用户信息_2微信用户授权.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/获取用户信息_2微信用户授权.png?raw=true)
-    </details>
+        <details>
+        <summary>获取用户信息_1构造网页授权url.png</summary>
+                
+        ![获取用户信息_2微信用户授权.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/获取用户信息_2微信用户授权.png?raw=true)
+        </details>
     
     - 授权成功自动访问回调接口地址并携带code参数，接口逻辑代码在WxRedirectController中
-    <details>
-    <summary>获取用户信息_1构造网页授权url.png</summary>
-            
-    ![获取用户信息_3用户信息展示.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/获取用户信息_3用户信息展示.png?raw=true)
-    </details>
+        <details>
+        <summary>获取用户信息_1构造网页授权url.png</summary>
+                
+        ![获取用户信息_3用户信息展示.png](https://github.com/yueyue10/WxJava/blob/master/images/mp-demo/获取用户信息_3用户信息展示.png?raw=true)
+        </details>
         - 通过code获取accessToken，通过accessToken获取用户信息WxMpUser
         - 通过{templates}{greet_user}页面展示用户信息
 
