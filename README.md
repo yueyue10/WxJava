@@ -4,6 +4,8 @@
 >
 >另外微信开发新手请务必阅读[【开发文档 Wiki 首页】][2]的常见问题部分，可以少走很多弯路，节省不少时间。
 
+### [新增公众号Demo][0]
+
 各个模块的Javadoc可以在线查看：
 ---
 * [weixin-java-miniapp][3]
@@ -39,3 +41,4 @@ Maven 引用方式
 [6]:http://binary.ac.cn/weixin-java-common-javadoc/
 [7]:http://binary.ac.cn/weixin-java-cp-javadoc/
 [8]:http://binary.ac.cn/weixin-java-open-javadoc/
+[0]:https://github.com/yueyue10/WxJava/tree/master/weixin-java-mp-demo-springboot
